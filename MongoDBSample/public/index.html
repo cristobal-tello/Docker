@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <button id="buttonWrite" type="button">Write data</button>
+    <button id="buttonRead" type="button">Read data</button>
+    <div id="response"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#buttonWrite').click(function() {
+                // run an AJAX get request to the route you setup above...
+                // respect the cross-domain policy by using the same domain
+                // you used to access your index.html file!
+                $.get('http://localhost/writeRequest', function(req) {
+                    $('#response').html(req); // show the list
+                });
+            });
+        });
+        $(document).ready(function() {
+            $('#buttonRead').click(function() {
+                $.get('http://localhost/readRequest', function(req) {
+                    $('#response').html(req);
+                });
+            });
+        });
+    </script>
+    </body>
+</html>
