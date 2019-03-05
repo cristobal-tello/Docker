@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <button id="buttonRead" type="button">Read data</button>
+    <div id="response"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#buttonRead').click(function() {
+                $.get('readRequest', function(req) {
+                    $('#response').html(req);
+                });
+            });
+        });
+    </script>
+    </body>
+</html>
